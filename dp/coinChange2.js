@@ -49,5 +49,9 @@ var change = function (amount, coins) {
   return dp[amount];
 };
 
+/**
+Time Complexity: O(n * amount), where n is the number of coins and amount is the target amount of money. We iterate through each coin for each amount from 1 to amount, so the time complexity is O(n * amount).
+ */
+
 console.log(change(5, [1, 2, 5])); // 4
 console.log(change(5, [2, 6])); // 4
