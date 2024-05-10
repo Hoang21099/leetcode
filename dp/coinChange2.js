@@ -54,4 +54,4 @@ Time Complexity: O(n * amount), where n is the number of coins and amount is the
  */
 
 console.log(change(5, [1, 2, 5])); // 4
-console.log(change(5, [2, 6])); // 4
+console.log(change(5, [2, 6])); // 0
