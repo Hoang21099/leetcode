@@ -61,6 +61,19 @@ var decodeString = function (s) {
 };
 // Time complexity is O(n) where n is the length of the input string s.
 // Space complexity is O(n) where n is the length of the input string s.
+/**
+ * Iteration through String:
+The outer for loop iterates through each character of the input string s exactly once. This contributes a time complexity of O(n), where n is the length of the input string.
+Operations Inside the Loop:
+Inside the loop, we have two while loops:
+The first while loop iterates until it encounters a [ character, popping characters from the stack and forming a temporary string. In the worst case, if there is no [ character, this loop may iterate through the entire string. 
+However, since each character is pushed and popped from the stack at most once, the total number of iterations across all characters is still proportional to the length of the input string. 
+Therefore, this loop also contributes O(n) time complexity.
+The second while loop similarly iterates until it encounters a non-digit character, extracting a count. Like the first while loop, the total number of iterations is proportional to the length of the input string. Thus, it also contributes O(n) time complexity.
+Concatenating strings inside the loop (decodedString += tempString) could potentially be an O(m) operation, where m is the length of tempString. However, since the length of tempString is bounded by the length of the input string, the overall time complexity of string concatenation across all iterations is still proportional to the length of the input string, or O(n).
+Total Time Complexity:
+Considering the iterations through the input string and the operations inside the loop, all of which are proportional to the length of the input string, the total time complexity of the code remains O(n), where n is the length of the input string. */
+
 console.log(decodeString("3[a]2[bc]")); // "aaabcbc"
 console.log(decodeString("3[a2[c]]")); // "accaccacc"
 console.log(decodeString("2[abc]3[cd]ef")); // "abcabccdcdcdef"
